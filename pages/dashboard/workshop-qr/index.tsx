@@ -14,7 +14,6 @@ import Paper from '@mui/material/Paper'
 import Select from '@mui/material/Select'
 import Switch from '@mui/material/Switch'
 import Typography from '@mui/material/Typography'
-import { QRCodeSVG } from 'qrcode.react'
 
 import Starfield from '@/components/Celestial/Starfield'
 import FullPageSpinner from '@/components/Shared/FullPageSpinner'
@@ -27,6 +26,7 @@ import { useAdminEventRedemptions } from '@/hooks/Workshop/useAdminEventRedempti
 import { useAdminQRToken } from '@/hooks/Workshop/useAdminQRToken'
 import Error401Page from '@/pages/401'
 import Error404Page from '@/pages/404'
+import { QRCodeSVG } from 'qrcode.react'
 
 const WorkshopQRPage = () => {
   const { toggles } = useFeatureToggle()

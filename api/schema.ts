@@ -21,15 +21,6 @@ import { EventListResp, eventListStatic } from '@/types/Event'
 import { PhotoListResp, photoListStatic } from '@/types/Photo'
 import { QRCheckInReq, QRCheckInResp, QRUserGetParams } from '@/types/QRCode'
 import {
-  EventRedemptionsResp,
-  PointAdjustReq,
-  PointAdjustResp,
-  QRTokenResp,
-  UserPointsResp,
-  WorkshopClaimReq,
-  WorkshopClaimResp,
-} from '@/types/Workshop'
-import {
   UserGetResp,
   UserListIdsParams,
   UserListIdsResp,
@@ -39,6 +30,15 @@ import {
   UserUpdateBatchReq,
   UserUpdateReq,
 } from '@/types/User'
+import {
+  EventRedemptionsResp,
+  PointAdjustReq,
+  PointAdjustResp,
+  QRTokenResp,
+  UserPointsResp,
+  WorkshopClaimReq,
+  WorkshopClaimResp,
+} from '@/types/Workshop'
 
 export const config = (customFetch: CustomFetch) =>
   ({

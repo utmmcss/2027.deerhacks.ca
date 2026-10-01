@@ -3,13 +3,13 @@ import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
+import MenuIcon from '@mui/icons-material/Menu'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import MenuIcon from '@mui/icons-material/Menu'
 
 import { useFeatureToggle } from '@/contexts/FeatureToggle'
 
