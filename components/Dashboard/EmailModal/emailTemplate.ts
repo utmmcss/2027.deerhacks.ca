@@ -13,7 +13,7 @@ const EMAIL_TEMPLATE_WRAPPER = `
         <table role="presentation" style="width: 100%; max-width: 600px; border-collapse: collapse;">
           <tr>
             <td style="padding: 0; border-radius: 12px 12px 0 0; overflow: hidden;">
-              <a href="https://deerhacks-v-2026.devpost.com" target="_blank" style="text-decoration:none;">
+              <a href="https://deerhacks-v-2027.devpost.com" target="_blank" style="text-decoration:none;">
                 <img src="https://i.imgur.com/o6UrNsQ.png"
                      alt="DeerHacks V Banner"
                      width="600"
@@ -123,7 +123,7 @@ export const sanitizeHtml = (input: string) => {
 const substituteVariables = (
   template: string,
   user: { first_name: string; last_name: string; email: string; status: string },
-  escape: boolean
+  escape: boolean,
 ): string => {
   const first = escape ? escapeHtml(user.first_name) : user.first_name
   const last = escape ? escapeHtml(user.last_name) : user.last_name
@@ -139,12 +139,12 @@ const substituteVariables = (
 
 export const substituteVariablesPlain = (
   template: string,
-  user: { first_name: string; last_name: string; email: string; status: string }
+  user: { first_name: string; last_name: string; email: string; status: string },
 ): string => substituteVariables(template, user, false)
 
 export const substituteVariablesForHtml = (
   template: string,
-  user: { first_name: string; last_name: string; email: string; status: string }
+  user: { first_name: string; last_name: string; email: string; status: string },
 ): string => substituteVariables(template, user, true)
 
 export const wrapContent = (content: string): string => {

@@ -22,7 +22,7 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <span className="text-xl font-display font-bold text-gradient">DeerHacks</span>
             <p className="text-sm text-muted-foreground mt-2">
-              (c) 2026 DeerHacks. Made with ♥️ at UTM.
+              (c) 2027 DeerHacks. Made with ♥️ at UTM.
             </p>
           </div>
 
@@ -61,7 +61,7 @@ const Footer = () => {
                 >
                   {link.label}
                 </a>
-              )
+              ),
             )}
           </div>
         </div>

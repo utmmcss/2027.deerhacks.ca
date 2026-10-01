@@ -1,4 +1,3 @@
-
 import AddIcon from '@mui/icons-material/Add'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
@@ -10,7 +9,7 @@ import Typography from '@mui/material/Typography'
 import { useFeatureToggle } from '@/contexts/FeatureToggle'
 
 const FAQ = () => {
-  const handleChange = ({ }, isExpanded: boolean) => {
+  const handleChange = ({}, isExpanded: boolean) => {
     // Logic removed as it was only updating unused openCount
   }
 
@@ -46,12 +45,12 @@ const FAQ = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                DeerHacks takes place on the weekend of February 27 - March 1, 2026.
+                DeerHacks takes place on the weekend of February 27 - March 1, 2027.
                 {toggles.signupHacker
-                  ? ' Hacker applications are open until February 12, 2026.'
+                  ? ' Hacker applications are open until February 12, 2027.'
                   : ' Thanks for applying to DeerHacks! We will review your applications and get back to you soon.'}
                 {toggles.signupVolunteer && toggles.signupMentor
-                  ? ' Volunteer & mentor applications are open until February 15, 2026.'
+                  ? ' Volunteer & mentor applications are open until February 15, 2027.'
                   : ''}{' '}
                 Keep an eye on this page and our socials (@deerhacks) for any updates.
               </Typography>
