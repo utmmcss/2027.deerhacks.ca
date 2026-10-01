@@ -91,30 +91,23 @@ const Team = () => {
           }}
         >
           <Organizer
-            name="Henrik S. Zimmermann"
-            description="I like trains"
-            avatar="/team/henrik.jpeg"
-            emoji="🚆"
-            website="https://henriksz.com/"
-            linkedin="https://www.linkedin.com/in/henrikszimmermann/"
-            github="https://github.com/HenrikSZ"
-          />
-          <Organizer
-            name="Taleen Abraham"
-            description="<3"
-            avatar="/team/taleen.jpg"
-            emoji="💵"
+            name="Emily Su"
+            description=""
+            avatar=""
+            emoji=""
             website=""
             linkedin=""
+            github=""
           />
+          <Organizer name="Farah Baseet" description="" avatar="" emoji="" website="" linkedin="" />
           <Organizer
-            name="Abdullah Shahid"
-            description="Just a chill guy"
-            avatar="/team/abdullah.webp"
-            emoji="💤"
-            website="https://nxabdullah.dev"
-            linkedin="https://www.linkedin.com/in/nxabdullah/"
-            github="https://github.com/nxabdullah"
+            name="Kaiden Rai"
+            description=""
+            avatar=""
+            emoji=""
+            website=""
+            linkedin=""
+            github=""
           />
           <Organizer
             name="Joshua Wuebbolt"
@@ -125,46 +118,79 @@ const Team = () => {
             linkedin="https://www.linkedin.com/in/joshuawuebbolt/"
             github="https://github.com/JoshuaWuebbolt"
           />
+          <Organizer name="Ryan Hui" description="" avatar="" emoji="" website="" linkedin="" />
+          <Organizer name="Sana Shahzad" description="" avatar="" emoji="" website="" linkedin="" />
           <Organizer
-            name="Krit Kasikpan"
+            name="Elif Sude Yasar"
             description=""
-            avatar="/team/krit.jpeg"
-            emoji="💤"
+            avatar=""
+            emoji=""
+            website=""
+            linkedin=""
+          />
+          <Organizer name="Carol Wang" description="" avatar="" emoji="" website="" linkedin="" />
+          <Organizer
+            name="Diego Pachas"
+            description=""
+            avatar=""
+            emoji=""
+            github=""
             website=""
             linkedin=""
           />
           <Organizer
-            name="Ana Elisa Lopez-Miranda"
+            name="Wareesha Imran"
             description=""
-            avatar="/team/ana.jpeg"
-            emoji="🫶"
+            avatar=""
+            emoji=""
+            github=""
             website=""
-            linkedin="www.linkedin.com/in/ana-elisa-lopez-miranda-410b81204"
+            linkedin=""
           />
           <Organizer
-            name="Dhruva Bhatt"
-            description="faith, trust and pixie dust"
-            avatar="/team/dhruva.jpg"
-            emoji="🍀"
-            website="https://dhxuva.github.io/Portfolio/"
-            linkedin="https://www.linkedin.com/in/dhruva-bhatt"
-          />
-          <Organizer
-            name="Raifa Sarwar"
-            description="argumentative and antithetical."
-            avatar="/team/raifa.jpg"
-            emoji="🪐"
+            name="Areesh Noman"
+            description=""
+            avatar=""
+            emoji=""
+            github=""
             website=""
-            linkedin="www.linkedin.com/in/raifa-sarwar-469ba217b"
+            linkedin=""
           />
           <Organizer
-            name="Saurabh Nair"
-            description="Touch Grass Bro 🙂"
-            avatar="/team/saurab.png"
-            emoji="🙂"
-            github="https://github.com/saurabh13113"
-            website="https://saurabhnair.com/"
-            linkedin="https://www.linkedin.com/in/saurabh-nair-bb66781b4"
+            name="Gabriel You"
+            description=""
+            avatar=""
+            emoji=""
+            github=""
+            website=""
+            linkedin=""
+          />
+          <Organizer
+            name="Mir Asim Ali"
+            description=""
+            avatar=""
+            emoji=""
+            github=""
+            website=""
+            linkedin=""
+          />
+          <Organizer
+            name="Jason Yu"
+            description=""
+            avatar=""
+            emoji=""
+            github=""
+            website=""
+            linkedin=""
+          />
+          <Organizer
+            name="Shanta Islam"
+            description=""
+            avatar=""
+            emoji=""
+            github=""
+            website=""
+            linkedin=""
           />
         </Marquee>
       </Container>
