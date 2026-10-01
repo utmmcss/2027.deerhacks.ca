@@ -116,6 +116,20 @@
     animation: constellation-glow 4s ease-in-out infinite;
     will-change: opacity;
   }
+
+  /* ---------- Under-construction scene ---------- */
+
+  /* Crane cable + hook sway back and forth like real site hoists */
+  .celestial-theme .uc-swing {
+    animation: uc-swing 4s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  /* The whole deer constellation gently bobs as it "hangs" */
+  .celestial-theme .uc-bob {
+    animation: uc-bob 6s ease-in-out infinite;
+    will-change: transform;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -124,6 +138,8 @@
   .celestial-theme .animate-pulse-slow,
   .celestial-theme .animate-drift,
   .celestial-theme .animate-constellation,
+  .celestial-theme .uc-swing,
+  .celestial-theme .uc-bob,
   .animate-star-layer {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -189,6 +205,26 @@
   }
   50% {
     opacity: 1;
+  }
+}
+
+@keyframes uc-swing {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes uc-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
   }
 }
 

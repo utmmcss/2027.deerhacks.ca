@@ -1,14 +1,18 @@
 import Head from 'next/head'
 
-import HomePage from '@/components/Celestial/HomePage'
+import UnderConstruction from '@/components/Celestial/UnderConstruction'
 
 const Index = () => {
   return (
     <>
       <Head>
-        <title>DeerHacks</title>
+        <title>DeerHacks 2027 | Coming Soon</title>
+        <meta
+          name="description"
+          content="DeerHacks 2027 is under construction. Follow us for dates, applications, and sneak peeks."
+        />
       </Head>
-      <HomePage />
+      <UnderConstruction />
     </>
   )
 }
