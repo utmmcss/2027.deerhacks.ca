@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { ReactNode } from 'react'
 
 import Navbar from '@/components/Shared/Navbar'
+
 import Footer from './Footer'
 import Starfield from './Starfield'
 
