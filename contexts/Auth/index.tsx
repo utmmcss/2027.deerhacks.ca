@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import { createContext, ReactNode, useContext } from 'react'
 
 import { useFeatureToggle } from '@/contexts/FeatureToggle'
-import { useUserGet } from '@/hooks/User/useUserGet'
+import { isUnauthorized, useUserGet } from '@/hooks/User/useUserGet'
 import { User } from '@/types/User'
 
 type Props = {
@@ -31,8 +31,9 @@ export const AuthProvider = (props: { children: ReactNode }) => {
       (router.pathname.includes('dashboard') ||
         router.pathname === '/login' ||
         router.pathname === '/claim'),
-    onError: () => {
-      if (router.pathname === '/login') return
+    onError: (err) => {
+      // Only a 401 means the session is gone; a busy server (503) is not a logout
+      if (router.pathname === '/login' || !isUnauthorized(err)) return
       router.push('/login?context=auth')
     },
   })

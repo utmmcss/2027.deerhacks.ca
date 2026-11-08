@@ -51,11 +51,16 @@ const ClaimPage = () => {
       { event_id: eventId, token },
       {
         onSuccess: (data) => {
+          if (data.already_claimed) {
+            setState('already_claimed')
+            return
+          }
           setResult(data)
           setState('success')
         },
         onError: (err: any) => {
           const status = err?.apiError?.status
+          // 409 is how older backends report a repeat scan
           if (status === 409) setState('already_claimed')
           else if (status === 410) setState('expired')
           else if (status === 403) setState('inactive')
