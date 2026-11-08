@@ -6,8 +6,11 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 import Grow from '@mui/material/Grow'
 import IconButton from '@mui/material/IconButton'
+import Skeleton from '@mui/material/Skeleton'
+import Typography from '@mui/material/Typography'
 
 import { useAPI } from '@/contexts/API'
+import { useCheckInQR } from '@/hooks/QRCode/useCheckInQR'
 import { UserStatus } from '@/types/User'
 import { QRCodeSVG } from 'qrcode.react'
 
@@ -22,6 +25,11 @@ const ModalQRCode = (props: Props) => {
   const { status, open, qrCode, setOpen } = props
 
   const api = useAPI()
+  const { data, isError } = useCheckInQR({ enabled: open })
+
+  // One QR for networking, check-in and meals: a link to /connect/<code> that changes every few
+  // seconds. Fall back to the old static code if the backend doesn't have /checkin-qr yet.
+  const qrValue = data ? `${window.location.origin}${data.qr_path}` : isError ? qrCode : undefined
 
   const handleClose = () => {
     setOpen(false)
@@ -63,14 +71,26 @@ const ModalQRCode = (props: Props) => {
         <Box component="div" display="flex" flexDirection="column" gap="1rem">
           <Alert severity="info">Turn up your brightness for sign-ins.</Alert>
           <Box component="div" display="flex" sx={{ borderRadius: '0.75rem', overflow: 'hidden' }}>
-            <QRCodeSVG
-              value={qrCode}
-              includeMargin
-              bgColor="#fff"
-              fgColor="#000"
-              style={{ height: 'auto', width: '100%' }}
-            />
+            {qrValue ? (
+              <QRCodeSVG
+                value={qrValue}
+                includeMargin
+                bgColor="#fff"
+                fgColor="#000"
+                style={{ height: 'auto', width: '100%' }}
+              />
+            ) : (
+              <Skeleton
+                variant="rectangular"
+                width="100%"
+                sx={{ aspectRatio: '1 / 1', height: 'auto' }}
+              />
+            )}
           </Box>
+          <Typography variant="body2" color="text.secondary" textAlign="center">
+            Networking, check-in & meals. It changes every few seconds, so screenshots won&apos;t
+            work.
+          </Typography>
         </Box>
       </DialogContent>
     </Dialog>
