@@ -34,3 +34,11 @@ export const qrContextLabels: { [key in QRCheckInContext]: string } = {
   drink_bar: 'Drink Bar',
   bubble_tea: 'Bubble Tea',
 }
+
+export type CheckInQRResp = {
+  token: string
+  qr_path: string
+  refresh_at: string
+  refresh_in_ms: number
+  interval_seconds: number
+}

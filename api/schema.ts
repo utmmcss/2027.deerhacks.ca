@@ -18,8 +18,10 @@ import {
 } from '@/types/Application'
 import { EmailSendReq, EmailSendResp, EmailVerifyReq, EmailVerifyResp } from '@/types/Email'
 import { EventListResp, eventListStatic } from '@/types/Event'
+import { LeaderboardResp } from '@/types/Leaderboard'
+import { ConnectProfileResp, ConnectResp } from '@/types/Networking'
 import { PhotoListResp, photoListStatic } from '@/types/Photo'
-import { QRCheckInReq, QRCheckInResp, QRUserGetParams } from '@/types/QRCode'
+import { CheckInQRResp, QRCheckInReq, QRCheckInResp, QRUserGetParams } from '@/types/QRCode'
 import {
   UserGetResp,
   UserListIdsParams,
@@ -47,6 +49,8 @@ export const config = (customFetch: CustomFetch) =>
     ...admin(customFetch),
     ...email(customFetch),
     ...events(customFetch),
+    ...leaderboard(customFetch),
+    ...networking(customFetch),
     ...photos(customFetch),
     ...qrCodes(customFetch),
     ...users(customFetch),
@@ -148,8 +152,32 @@ const photos = (customFetch: CustomFetch) =>
     },
   } as const)
 
+const leaderboard = (customFetch: CustomFetch) =>
+  ({
+    leaderboardGet: async () => {
+      const res = await customFetch('GET', 'DH_BE', '/leaderboard')
+      return res.data as LeaderboardResp
+    },
+  } as const)
+
+const networking = (customFetch: CustomFetch) =>
+  ({
+    connectProfileGet: async (args: { id: string }) => {
+      const res = await customFetch('GET', 'DH_BE', `/connect/${encodeURIComponent(args.id)}`)
+      return res.data as ConnectProfileResp
+    },
+    connectCreate: async (args: { id: string }) => {
+      const res = await customFetch('POST', 'DH_BE', `/connect/${encodeURIComponent(args.id)}`)
+      return res.data as ConnectResp
+    },
+  } as const)
+
 const qrCodes = (customFetch: CustomFetch) =>
   ({
+    checkInQRGet: async () => {
+      const res = await customFetch('GET', 'DH_BE', '/checkin-qr')
+      return res.data as CheckInQRResp
+    },
     qrCheckIn: async (args: QRCheckInReq) => {
       const res = await customFetch('POST', 'DH_BE', '/qr-check-in', args)
       return res.data as QRCheckInResp

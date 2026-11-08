@@ -5,6 +5,8 @@ export type WorkshopClaimReq = {
 
 export type WorkshopClaimResp = {
   points_awarded: number
+  // true on a repeat scan: the backend answers 200 with points_awarded 0 instead of 409
+  already_claimed?: boolean
   total_points: number
   event_title: string
 }

@@ -1,17 +1,22 @@
+import { APIError } from '@/api/types'
 import { useAPI } from '@/contexts/API'
 import { User } from '@/types/User'
 
 type Props = {
   enabled?: boolean
   onSuccess?: () => void
-  onError?: () => void
+  onError?: (err: unknown) => void
 }
+
+export const isUnauthorized = (err: unknown) => (err as APIError)?.apiError?.status === 401
 
 /** IMPORTANT: Do not use this directly, use useAuth */
 export const useUserGet = (props?: Props) => {
   return useAPI().useQuery(['userGet', null], {
     enabled: props?.enabled,
-    retry: false,
+    // 401 means logged out. Anything else (503 busy, 429, network) keeps retrying with backoff
+    // (up to 30s apart), so pages show a spinner until the server recovers instead of a 401 page
+    retry: (_, err) => !isUnauthorized(err),
     staleTime: Infinity,
     refetchOnMount: false,
     refetchOnWindowFocus: false,
